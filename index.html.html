@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación Digital - Carolina Mejía</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Playfair Display & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #f0f0f0; 
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-playfair { 
+            font-family: 'Playfair Display', serif; 
+        }
+        .yellow-gradient { 
+            background: linear-gradient(145deg, #F2F527, #D9DC10); 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15), inset 0 1px 1px rgba(255, 255, 255, 0.6); 
+            transition: all 0.2s ease;
+        }
+        .button-3d:active { 
+            transform: translateY(2px); 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+        }
+        .name-color { 
+            color: #0B0B42; 
+        }
+        .icon-bg { 
+            background: linear-gradient(145deg, #0B0B42, #050521); 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1px 1px rgba(0,0,0,0.2); 
+        }
+        .icon-color { 
+            color: #F2F527; 
+        }
+        .logo-gradient { 
+            fill: #0B0B42; 
+        }
+        .install-tab-active { 
+            border-bottom-width: 2px; 
+            border-color: #0B0B42; 
+            color: #0B0B42; 
+            font-weight: 600;
+        }
+        .course-details { 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.3s ease; 
+            opacity: 0;
+        }
+        .course-details.open { 
+            max-height: 800px; 
+            padding-top: 0.75rem; 
+            padding-bottom: 0.5rem; 
+            opacity: 1;
+        }
+        /* Custom scrollbar for modal popups */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #0B0B42;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen sm:p-4 text-gray-800">
+
+    <!-- Main Card Container -->
+    <div class="w-full sm:max-w-sm mx-auto bg-white rounded-none sm:rounded-3xl overflow-hidden relative shadow-2xl min-h-screen sm:min-h-0">
+        
+        <!-- Quick Action Header Buttons -->
+        <a href="#" id="installButton" aria-label="Instalar Aplicación" class="absolute top-4 left-4 z-20 w-12 h-12 bg-black/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center text-white hover:bg-black/30 transition-all active:scale-95">
+            <i class="fas fa-mobile-screen-button text-2xl"></i>
+        </a>
+        <a href="tel:+573053228221" aria-label="Llamar" class="absolute top-4 right-4 z-20 w-12 h-12 bg-black/20 backdrop-blur-md border border-white/30 rounded-full flex items-center justify-center text-white hover:bg-black/30 transition-all active:scale-95">
+            <i class="fas fa-phone-alt text-2xl"></i>
+        </a>
+
+        <!-- Profile Header Section -->
+        <div class="relative text-center pb-8 bg-white">
+            <div class="absolute top-0 left-0 w-full h-[320px]">
+                <img src="https://i.postimg.cc/L81pgHdv/Whats-App-Image-2026-09-18-at-7-42-34-PM.jpg" 
+                     alt="Carolina Mejía" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/400x320/0B0B42/FFFFFF?text=Carolina+Mejia';"
+                     class="w-full h-full object-cover object-[center_25%]">
+                <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10 pt-[280px] px-4">
+                <h1 class="font-playfair text-3xl tracking-widest uppercase name-color mt-2 leading-tight">
+                    <span class="block font-light">Carolina</span> 
+                    <span class="block font-bold">Mejía</span>
+                </h1>
+                <p class="text-sm tracking-[0.2em] text-[#0B0B42] mt-2 font-medium">Ingenieria en proracion de software</p>
+                <h2 class="text-2xl font-light text-[#0B0B42] mt-8">¡Bienvenida(o)!</h2>
+            </div>
+        </div>
+
+        <!-- Buttons Navigation Menu -->
+        <div class="p-6 pt-4 space-y-5 bg-white rounded-b-3xl">
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/573053228221" target="_blank" rel="noopener noreferrer" class="relative flex items-center h-14 rounded-full yellow-gradient button-3d group overflow-hidden">
+                <div class="absolute left-0 w-16 h-16 rounded-full flex items-center justify-center icon-bg z-10">
+                    <i class="fab fa-whatsapp text-4xl icon-color"></i>
+                </div>
+                <span class="w-full pl-16 text-center text-[#0B0B42] font-bold uppercase tracking-wider text-sm">WhatsApp</span>
+            </a>
+
+            <!-- Time Availability Button -->
+            <a href="#" id="scheduleButton" class="relative flex items-center h-14 rounded-full yellow-gradient button-3d group overflow-hidden">
+                <div class="absolute left-0 w-16 h-16 rounded-full flex items-center justify-center icon-bg z-10">
+                    <i class="fas fa-calendar-check text-3xl icon-color"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-[#0B0B42] font-bold uppercase tracking-wider text-xs sm:text-sm">Disponibilidad de tiempo</span>
+            </a>
+
+            <!-- Courses / Formación Button -->
+            <a href="#" id="coursesButton" class="relative flex items-center h-14 rounded-full yellow-gradient button-3d group overflow-hidden">
+                <div class="absolute left-0 w-16 h-16 rounded-full flex items-center justify-center icon-bg z-10">
+                    <i class="fas fa-graduation-cap text-3xl icon-color"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-[#0B0B42] font-bold uppercase tracking-wider text-sm">Formación</span>
+            </a>
+
+            <!-- Work Experience Button -->
+            <a href="#" id="experienceButton" class="relative flex items-center h-14 rounded-full yellow-gradient button-3d group overflow-hidden">
+                <div class="absolute left-0 w-16 h-16 rounded-full flex items-center justify-center icon-bg z-10">
+                    <i class="fas fa-briefcase text-3xl icon-color"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-[#0B0B42] font-bold uppercase tracking-wider text-xs sm:text-sm">Experiencia Laboral</span>
+            </a>
+
+            <!-- QR Share Button -->
+            <a href="#" id="qrButton" class="relative flex items-center h-14 rounded-full yellow-gradient button-3d group overflow-hidden">
+                <div class="absolute left-0 w-16 h-16 rounded-full flex items-center justify-center icon-bg z-10">
+                    <i class="fas fa-qrcode text-3xl icon-color"></i>
+                </div>
+                <span class="w-full pl-12 text-center text-[#0B0B42] font-bold uppercase tracking-wider text-sm">Compartir QR</span>
+    <!-- Modal: Time Availability (Disponibilidad de Tiempo) -->
+    <div id="schedulePopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-2xl relative max-w-sm w-full border border-amber-100">
+            <button id="closeSchedulePopup" aria-label="Cerrar" class="absolute top-3 right-3 text-[#0B0B42] hover:text-red-600 transition-colors text-2xl font-bold px-2">&times;</button>
+            <h3 class="text-2xl font-medium mb-4 font-playfair text-[#0B0B42] text-center">Disponibilidad de Tiempo</h3>
+            <div class="space-y-3 text-sm text-gray-700">
+                <div class="flex justify-between border-b border-amber-200/60 pb-2">
+                    <span class="font-medium">Lunes a Viernes</span> 
+                    <span class="font-semibold text-[#0B0B42]">8:00 AM - 12:00 PM</span>
+                </div>
+                <div class="flex justify-between border-b border-amber-200/60 pb-2">
+                    <span class="font-medium">Sábados</span> 
+                    <span class="font-semibold text-[#0B0B42]">8:00 AM - 2:00 PM</span>
+                </div>
+                <div class="flex justify-between border-b border-amber-200/60 pb-2">
+                    <span class="font-medium">Modalidad</span> 
+                    <span class="font-semibold text-[#0B0B42]">Remoto / Presencial</span>
+                </div>
+                <div class="flex justify-between text-gray-500 pt-1">
+                    <span>Zona Horaria</span> 
+                    <span class="italic">COT (UTC-5)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: QR Code Share -->
+    <div id="qrPopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-8 text-center shadow-2xl relative max-w-xs w-full border border-amber-100">
+            <button id="closeQrPopup" aria-label="Cerrar" class="absolute top-3 right-3 text-[#0B0B42] hover:text-red-600 transition-colors text-2xl font-bold px-2">&times;</button>
+            <h3 class="text-xl font-medium mb-4 font-playfair text-[#0B0B42]">Escanea para Compartir</h3>
+            <div class="p-2 bg-white rounded-xl shadow-inner border border-gray-200 mb-2">
+                <img src="https://i.postimg.cc/MpqfXCLR/qr-tarjeta.png" 
+                     alt="QR Code" 
+                     onerror="this.onerror=null; this.src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' + encodeURIComponent(window.location.href);" 
+                     class="w-full h-auto rounded-lg">
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Apunta con la cámara de tu móvil para guardar o compartir este contacto.</p>
+        </div>
+    </div>
+
+    <!-- Modal: Work Experience (Experiencia Laboral) -->
+    <div id="experiencePopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-2xl relative max-w-sm w-full border border-amber-100">
+            <button id="closeExperiencePopup" aria-label="Cerrar" class="absolute top-3 right-3 text-[#0B0B42] hover:text-red-600 transition-colors text-2xl font-bold px-2">&times;</button>
+            <h3 class="text-2xl font-medium mb-4 font-playfair text-[#0B0B42] text-center">Experiencia Laboral</h3>
+            <div class="space-y-3 text-sm text-gray-700">
+                <div class="p-3 bg-white/70 rounded-lg border border-amber-200/50">
+                    <h5 class="font-semibold text-[#0B0B42] mb-1">Líder de Desarrollo de Software</h5>
+                    <p class="text-xs text-gray-600">Dirección de equipos multitarea, arquitectura de software y gestión de proyectos tecnológicos.</p>
+                </div>
+                <div class="p-3 bg-white/70 rounded-lg border border-amber-200/50">
+                    <h5 class="font-semibold text-[#0B0B42] mb-1">Ingeniera de Software Full Stack</h5>
+                    <p class="text-xs text-gray-600">Diseño y desarrollo de aplicaciones web complejas, integración de APIs REST y bases de datos.</p>
+                </div>
+                <div class="p-3 bg-white/70 rounded-lg border border-amber-200/50">
+                    <h5 class="font-semibold text-[#0B0B42] mb-1">Consultora & Asesora Tecnológica</h5>
+                    <p class="text-xs text-gray-600">Implementación de soluciones cloud, optimización de algoritmos e integración de modelos de IA.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Courses (Formación) -->
+    <div id="coursesPopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-2xl relative max-w-sm w-full h-[80vh] flex flex-col border border-amber-100">
+            <button id="closeCoursesPopup" aria-label="Cerrar" class="absolute top-3 right-3 text-[#0B0B42] hover:text-red-600 transition-colors text-2xl font-bold px-2 z-10">&times;</button>
+            <h3 class="text-2xl font-medium mb-4 font-playfair text-[#0B0B42] text-center shrink-0">Formación</h3>
+            
+            <div class="space-y-4 overflow-y-auto custom-scrollbar pr-1 flex-1">
+                <!-- Course Item 1 -->
+                <div class="border border-[#0B0B42]/30 rounded-xl p-3 bg-white/50 hover:bg-white transition-all">
+                    <h4 class="font-bold text-[#0B0B42] text-base">Inteligencia Artificial Generativa</h4>
+                    <button class="course-info-toggle text-xs text-[#0B0B42] font-bold mt-2 flex items-center gap-1 hover:underline focus:outline-none">
+                        <span>MÁS INFO</span> 
+                        <i class="fas fa-chevron-right text-[10px] transition-transform duration-300"></i>
+                    </button>
+                    <div class="course-details text-xs text-gray-600 space-y-1.5 border-t border-gray-200/60 mt-2 pt-2">
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Introducción a la IA Generativa</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Uso de modelos de lenguaje</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Ingeniería de prompts</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Generación de texto, imágenes, audio y video</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Automatización de contenidos</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Creación de asistentes virtuales y chatbots</p>
+                    </div>
+                </div>
+
+                <!-- Course Item 2 -->
+                <div class="border border-[#0B0B42]/30 rounded-xl p-3 bg-white/50 hover:bg-white transition-all">
+                    <h4 class="font-bold text-[#0B0B42] text-base">Procesamiento de Lenguaje Natural</h4>
+                    <button class="course-info-toggle text-xs text-[#0B0B42] font-bold mt-2 flex items-center gap-1 hover:underline focus:outline-none">
+                        <span>MÁS INFO</span> 
+                        <i class="fas fa-chevron-right text-[10px] transition-transform duration-300"></i>
+                    </button>
+                    <div class="course-details text-xs text-gray-600 space-y-1.5 border-t border-gray-200/60 mt-2 pt-2">
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Fundamentos del PLN</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Análisis de sentimientos</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Clasificación de textos</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Resumen automático de documentos</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Traducción automática</p>
+                        <p class="flex items-center gap-1.5"><i class="fas fa-check text-xs text-emerald-600"></i> Sistemas conversacionales inteligentes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Install PWA Guide -->
+    <div id="installPopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-[#FFFBF5] rounded-2xl p-6 shadow-2xl relative max-w-sm w-full border border-amber-100">
+            <button id="closeInstallPopup" aria-label="Cerrar" class="absolute top-3 right-3 text-[#0B0B42] hover:text-red-600 transition-colors text-2xl font-bold px-2">&times;</button>
+            <h3 class="text-xl font-medium text-center font-playfair text-[#0B0B42] mb-4">Instalar en Dispositivo</h3>
+            
+            <!-- System Tabs -->
+            <div class="flex border-b border-gray-200 mb-4">
+                <button id="iosTab" class="flex-1 py-2 text-center transition-all install-tab-active font-medium text-sm">
+                    <i class="fab fa-apple mr-1"></i> iOS
+                </button>
+                <button id="androidTab" class="flex-1 py-2 text-center transition-all text-gray-500 font-medium text-sm">
+                    <i class="fab fa-android mr-1"></i> Android
+                </button>
+            </div>
+            
+            <!-- Instructions Content -->
+            <div id="iosInstructions" class="text-sm text-gray-700 bg-white/70 p-4 rounded-xl border border-amber-200/50 space-y-2">
+                <p class="flex items-start gap-2">
+                    <span class="font-bold text-[#0B0B42]">1.</span> 
+                    <span>Toca el icono de <strong>Compartir</strong> <i class="fas fa-share-nodes text-[#0B0B42]"></i> en el navegador Safari.</span>
+                </p>
+                <p class="flex items-start gap-2">
+                    <span class="font-bold text-[#0B0B42]">2.</span> 
+                    <span>Desplázate hacia abajo y selecciona <strong>"Añadir a pantalla de inicio"</strong> <i class="far fa-plus-square text-[#0B0B42]"></i>.</span>
+                </p>
+            </div>
+            
+            <div id="androidInstructions" class="hidden text-sm text-gray-700 bg-white/70 p-4 rounded-xl border border-amber-200/50 space-y-2">
+                <p class="flex items-start gap-2">
+                    <span class="font-bold text-[#0B0B42]">1.</span> 
+                    <span>Toca los <strong>tres puntos</strong> <i class="fas fa-ellipsis-vertical text-[#0B0B42]"></i> en la esquina superior derecha de Chrome.</span>
+                </p>
+                <p class="flex items-start gap-2">
+                    <span class="font-bold text-[#0B0B42]">2.</span> 
+                    <span>Selecciona <strong>"Añadir a pantalla de inicio"</strong> o <strong>"Instalar aplicación"</strong>.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openPopup = (id) => {
+            const popup = document.getElementById(id);
+            if (popup) {
+                popup.classList.remove('hidden');
+            }
+        };
+
+        const closePopup = (id) => {
+            const popup = document.getElementById(id);
+            if (popup) {
+                popup.classList.add('hidden');
+            }
+        };
+
+        // Schedule Popup
+        document.getElementById('scheduleButton').onclick = (e) => { 
+            e.preventDefault(); 
+            openPopup('schedulePopup'); 
+        };
+        document.getElementById('closeSchedulePopup').onclick = () => closePopup('schedulePopup');
+        
+        // QR Popup
+        document.getElementById('qrButton').onclick = (e) => { 
+            e.preventDefault(); 
+            openPopup('qrPopup'); 
+        };
+        document.getElementById('closeQrPopup').onclick = () => closePopup('qrPopup');
+
+        // Courses Popup
+        document.getElementById('coursesButton').onclick = (e) => { 
+            e.preventDefault(); 
+            openPopup('coursesPopup'); 
+        };
+        document.getElementById('closeCoursesPopup').onclick = () => closePopup('coursesPopup');
+
+        // Experience Popup
+        document.getElementById('experienceButton').onclick = (e) => { 
+            e.preventDefault(); 
+            openPopup('experiencePopup'); 
+        };
+        document.getElementById('closeExperiencePopup').onclick = () => closePopup('experiencePopup');
+
+        // Install Popup
+        document.getElementById('installButton').onclick = (e) => { 
+            e.preventDefault(); 
+            openPopup('installPopup'); 
+        };
+        document.getElementById('closeInstallPopup').onclick = () => closePopup('installPopup');
+
+        document.querySelectorAll('.course-info-toggle').forEach(btn => {
+            btn.onclick = () => {
+                const details = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                const isOpening = !details.classList.contains('open');
+                
+                details.classList.toggle('open');
+                
+                if (icon) {
+                    if (isOpening) {
+                        icon.style.transform = 'rotate(90deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                }
+            };
+        });
+
+        const iosTab = document.getElementById('iosTab');
+        const androidTab = document.getElementById('androidTab');
+        const iosInstructions = document.getElementById('iosInstructions');
+        const androidInstructions = document.getElementById('androidInstructions');
+
+        iosTab.onclick = () => {
+            iosInstructions.classList.remove('hidden');
+            androidInstructions.classList.add('hidden');
+            iosTab.classList.add('install-tab-active');
+            iosTab.classList.remove('text-gray-500');
+            androidTab.classList.remove('install-tab-active');
+            androidTab.classList.add('text-gray-500');
+        };
+
+        androidTab.onclick = () => {
+            androidInstructions.classList.remove('hidden');
+            iosInstructions.classList.add('hidden');
+            androidTab.classList.add('install-tab-active');
+            androidTab.classList.remove('text-gray-500');
+            iosTab.classList.remove('install-tab-active');
+            iosTab.classList.add('text-gray-500');
+        };
+
+        window.addEventListener('click', (e) => {
+            const popups = ['schedulePopup', 'qrPopup', 'coursesPopup', 'experiencePopup', 'installPopup'];
+            popups.forEach(id => {
+                const popup = document.getElementById(id);
+                if (e.target === popup) {
+                    closePopup(id);
+                }
+            });
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const popups = ['schedulePopup', 'qrPopup', 'coursesPopup', 'experiencePopup', 'installPopup'];
+                popups.forEach(id => closePopup(id));
+            }
+        });
+    </script>
+</body>
+</html>
